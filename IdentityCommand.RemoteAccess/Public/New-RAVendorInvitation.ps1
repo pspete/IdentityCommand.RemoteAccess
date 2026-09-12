@@ -39,7 +39,7 @@ function New-RAVendorInvitation {
 
         #Indicates whether the vendor can invite other vendors.
         [parameter(Mandatory = $true)]
-        [switch]$canInvite,
+        [bool]$canInvite,
 
         #The applications that the vendor can access through Remote Access, as objects with siteId/applicationId properties.
         [parameter(Mandatory = $true)]
@@ -80,7 +80,7 @@ function New-RAVendorInvitation {
 
         #Indicates whether the vendor authenticates with an SMS code or phone call plus an emailed token, instead of scanning a QR code.
         [parameter(Mandatory = $false)]
-        [switch]$phoneAndEmailAuth,
+        [bool]$phoneAndEmailAuth,
 
         #Indicates whether additional vendors invited by the vendor are activated automatically or manually.
         [parameter(Mandatory = $false)]
@@ -89,7 +89,7 @@ function New-RAVendorInvitation {
 
         #Indicates whether the vendor can access web applications.
         [parameter(Mandatory = $false)]
-        [switch]$enableWebAppsAccess
+        [bool]$enableWebAppsAccess
 
     )
 
@@ -99,30 +99,12 @@ function New-RAVendorInvitation {
 
         $URI = "$($ISPSSSession.tenant_url)/v2-edge/invitations/vendor-invitations"
 
-        $Body = [ordered]@{
-            companyName   = $companyName
-            emailAddress  = $emailAddress
-            firstName     = $firstName
-            lastName      = $lastName
-            phoneNumber   = $phoneNumber
-            initialStatus = $initialStatus
-            accessStartDate = $accessStartDate | ConvertTo-RAEpochMillisecond
-            accessEndDate   = $accessEndDate | ConvertTo-RAEpochMillisecond
-            canInvite     = [bool]$canInvite
-            applications  = @($applications)
-        }
+        $Body = $PSBoundParameters | Get-Parameter
 
-        if ($PSBoundParameters.ContainsKey('accessTimeDetails')) { $Body.accessTimeDetails = $accessTimeDetails }
-        if ($PSBoundParameters.ContainsKey('comments')) { $Body.comments = $comments }
-        if ($PSBoundParameters.ContainsKey('provisioningType')) { $Body.provisioningType = $provisioningType }
-        if ($PSBoundParameters.ContainsKey('provisioningUsername')) { $Body.provisioningUsername = $provisioningUsername }
-        if ($PSBoundParameters.ContainsKey('provisioningGroups')) { $Body.provisioningGroups = @($provisioningGroups) }
-        if ($PSBoundParameters.ContainsKey('idaptiveRoles')) { $Body.idaptiveRoles = @($idaptiveRoles) }
-        if ($PSBoundParameters.ContainsKey('customText')) { $Body.customText = $customText }
-        if ($PSBoundParameters.ContainsKey('maxNumOfInvitedVendors')) { $Body.maxNumOfInvitedVendors = $maxNumOfInvitedVendors }
-        if ($PSBoundParameters.ContainsKey('phoneAndEmailAuth')) { $Body.phoneAndEmailAuth = [bool]$phoneAndEmailAuth }
-        if ($PSBoundParameters.ContainsKey('invitedVendorsInitialStatus')) { $Body.invitedVendorsInitialStatus = $invitedVendorsInitialStatus }
-        if ($PSBoundParameters.ContainsKey('enableWebAppsAccess')) { $Body.enableWebAppsAccess = [bool]$enableWebAppsAccess }
+        switch ($PSBoundParameters.Keys) {
+            'accessStartDate' { $Body.accessStartDate = $accessStartDate | ConvertTo-RAEpochMillisecond }
+            'accessEndDate' { $Body.accessEndDate = $accessEndDate | ConvertTo-RAEpochMillisecond }
+        }
 
         if ($PSCmdlet.ShouldProcess($emailAddress, 'Create vendor invitation')) {
 

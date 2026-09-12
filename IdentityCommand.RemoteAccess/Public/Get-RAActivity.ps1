@@ -51,8 +51,10 @@ function Get-RAActivity {
 
         $boundparameters = $PSBoundParameters | Get-Parameter
 
-        if ($PSBoundParameters.ContainsKey('fromTime')) { $boundparameters.fromTime = $fromTime | ConvertTo-RAEpochMillisecond }
-        if ($PSBoundParameters.ContainsKey('toTime')) { $boundparameters.toTime = $toTime | ConvertTo-RAEpochMillisecond }
+        switch ($PSBoundParameters.Keys) {
+            'fromTime' { $boundparameters.fromTime = $fromTime | ConvertTo-RAEpochMillisecond }
+            'toTime' { $boundparameters.toTime = $toTime | ConvertTo-RAEpochMillisecond }
+        }
 
         $URI = Add-QueryString -URI $URI -Parameter $boundparameters
         $result = Invoke-IDRestMethod -Uri $URI -Method GET

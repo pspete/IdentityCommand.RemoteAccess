@@ -13,7 +13,7 @@ Creates a vendor invitation
 ## SYNTAX
 
 ```
-New-RAVendorInvitation [-accessStartDate] <DateTime> [-initialStatus] <String> [-accessEndDate] <DateTime> [-applications] <Object[]> [-canInvite] [-emailAddress] <String> [-companyName] <String> [-firstName] <String> [-phoneNumber] <String> [-lastName] <String> [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Verbose] [-Debug] [-ErrorVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-OutVariable <String>] [-WarningVariable <String>] [-InformationVariable <String>] [-provisioningUsername <String>] [-provisioningGroups <String[]>] [-provisioningType <String>] [-accessTimeDetails <Object>] [-comments <String>] [-idaptiveRoles <String[]>] [-invitedVendorsInitialStatus <String>] [-enableWebAppsAccess] [-phoneAndEmailAuth] [-customText <String>] [-maxNumOfInvitedVendors <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-RAVendorInvitation [-accessStartDate] <DateTime> [-initialStatus] <String> [-accessEndDate] <DateTime> [-applications] <Object[]> [-canInvite] <Boolean> [-emailAddress] <String> [-companyName] <String> [-firstName] <String> [-phoneNumber] <String> [-lastName] <String> [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Verbose] [-Debug] [-ErrorVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-OutVariable <String>] [-WarningVariable <String>] [-InformationVariable <String>] [-provisioningUsername <String>] [-provisioningGroups <String[]>] [-provisioningType <String>] [-accessTimeDetails <Object>] [-comments <String>] [-idaptiveRoles <String[]>] [-invitedVendorsInitialStatus <String>] [-enableWebAppsAccess <Boolean>] [-phoneAndEmailAuth <Boolean>] [-customText <String>] [-maxNumOfInvitedVendors <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,12 +154,12 @@ Accept wildcard characters: False
 Indicates whether the vendor can invite other vendors.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -174,7 +174,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 8
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -189,7 +189,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 9
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -204,7 +204,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 10
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -219,7 +219,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 11
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -234,7 +234,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 12
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -249,7 +249,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 13
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -264,7 +264,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 14
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -279,7 +279,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 15
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -294,7 +294,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 16
+Position: 17
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -304,12 +304,12 @@ Accept wildcard characters: False
 Indicates whether the vendor authenticates with an SMS code or phone call plus an emailed token, instead of scanning a QR code.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: Named
+Position: 18
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -324,7 +324,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 17
+Position: 19
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -334,12 +334,12 @@ Accept wildcard characters: False
 Indicates whether the vendor can access web applications.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: Named
+Position: 20
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

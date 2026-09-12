@@ -33,23 +33,23 @@ function New-RATeam {
 
         #Indicates whether the vendor manager can invite vendors to web applications.
         [parameter(Mandatory = $true)]
-        [switch]$canInviteToWebApps,
+        [bool]$canInviteToWebApps,
 
         #Indicates whether the vendor manager can delegate permissions to other external vendor managers.
         [parameter(Mandatory = $true)]
-        [switch]$canDelegatePermissionsToExternalVendorManagers,
+        [bool]$canDelegatePermissionsToExternalVendorManagers,
 
         #Indicates whether the vendor manager can create groups.
         [parameter(Mandatory = $true)]
-        [switch]$canCreateGroups,
+        [bool]$canCreateGroups,
 
         #Indicates whether the vendor manager can invite vendors to all groups.
         [parameter(Mandatory = $true)]
-        [switch]$canInviteToAllGroups,
+        [bool]$canInviteToAllGroups,
 
         #Indicates whether the vendor manager can invite vendors to all applications.
         [parameter(Mandatory = $true)]
-        [switch]$canInviteToAllApps,
+        [bool]$canInviteToAllApps,
 
         #The applications that the vendor can access through Remote Access, as objects with id/siteId properties.
         [parameter(Mandatory = $false)]
@@ -83,26 +83,12 @@ function New-RATeam {
 
         $URI = "$($ISPSSSession.tenant_url)/v2-edge/teams"
 
-        $Body = [ordered]@{
-            name                                             = $name
-            accessPeriodStartDate                           = $accessPeriodStartDate | ConvertTo-RAEpochMillisecond
-            accessPeriodEndDate                             = $accessPeriodEndDate | ConvertTo-RAEpochMillisecond
-            accountActivation                                = $accountActivation
-            userProvisioning                                 = $userProvisioning
-            canInviteToWebApps                               = [bool]$canInviteToWebApps
-            canDelegatePermissionsToExternalVendorManagers   = [bool]$canDelegatePermissionsToExternalVendorManagers
-            canCreateGroups                                  = [bool]$canCreateGroups
-            canInviteToAllGroups                             = [bool]$canInviteToAllGroups
-            canInviteToAllApps                               = [bool]$canInviteToAllApps
-        }
+        $Body = $PSBoundParameters | Get-Parameter
 
-        if ($PSBoundParameters.ContainsKey('description')) { $Body.description = $description }
-        if ($PSBoundParameters.ContainsKey('allowedApps')) { $Body.allowedApps = @($allowedApps) }
-        if ($PSBoundParameters.ContainsKey('maxInvitedVendors')) { $Body.maxInvitedVendors = $maxInvitedVendors }
-        if ($PSBoundParameters.ContainsKey('userGroups')) { $Body.userGroups = @($userGroups) }
-        if ($PSBoundParameters.ContainsKey('idaptiveRoles')) { $Body.idaptiveRoles = @($idaptiveRoles) }
-        if ($PSBoundParameters.ContainsKey('provisioningUsername')) { $Body.provisioningUsername = $provisioningUsername }
-        if ($PSBoundParameters.ContainsKey('allowedEmailDomains')) { $Body.allowedEmailDomains = @($allowedEmailDomains) }
+        switch ($PSBoundParameters.Keys) {
+            'accessPeriodStartDate' { $Body.accessPeriodStartDate = $accessPeriodStartDate | ConvertTo-RAEpochMillisecond }
+            'accessPeriodEndDate' { $Body.accessPeriodEndDate = $accessPeriodEndDate | ConvertTo-RAEpochMillisecond }
+        }
 
         if ($PSCmdlet.ShouldProcess($name, 'Create team')) {
 

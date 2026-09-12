@@ -58,7 +58,7 @@ Get-RAUser
 Set-RAUserRole -userId u123 -role VendorManager
 Get-RAUserTeam -userId u123
 Add-RAUserToTeam -userId u123 -teamId t456
-Grant-RAVendorManagerPermission -userId u123 -accessPeriodStartDate (Get-Date) -accessPeriodEndDate (Get-Date).AddMonths(6) -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps -canDelegatePermissionsToExternalVendorManagers -canCreateGroups -canInviteToAllGroups -canInviteToAllApps
+Grant-RAVendorManagerPermission -userId u123 -accessPeriodStartDate (Get-Date) -accessPeriodEndDate (Get-Date).AddMonths(6) -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps $true -canDelegatePermissionsToExternalVendorManagers $true -canCreateGroups $true -canInviteToAllGroups $true -canInviteToAllApps $true
 ```
 
 ### Groups
@@ -74,7 +74,7 @@ Remove-RAGroup -groupId g123
 
 ```powershell
 Get-RATeam
-New-RATeam -name 'EMEA Vendor Managers' -accessPeriodStartDate (Get-Date) -accessPeriodEndDate (Get-Date).AddYears(1) -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps -canDelegatePermissionsToExternalVendorManagers -canCreateGroups -canInviteToAllGroups -canInviteToAllApps
+New-RATeam -name 'EMEA Vendor Managers' -accessPeriodStartDate (Get-Date) -accessPeriodEndDate (Get-Date).AddYears(1) -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps $true -canDelegatePermissionsToExternalVendorManagers $true -canCreateGroups $true -canInviteToAllGroups $true -canInviteToAllApps $true
 Get-RATeamMember -teamId t456
 Add-RATeamMember -teamId t456 -userId u123
 Remove-RATeamMember -teamId t456 -userId u123
@@ -85,14 +85,14 @@ Remove-RATeam -teamId t456
 
 ```powershell
 Get-RASelfServiceRequest
-Approve-RASelfServiceRequest -id r789 -initialStatus Activated -accessStartDate (Get-Date) -accessEndDate (Get-Date).AddMonths(3) -canInvite -applications @(@{ siteId = 's1'; applicationId = 'a1' })
+Approve-RASelfServiceRequest -id r789 -initialStatus Activated -accessStartDate (Get-Date) -accessEndDate (Get-Date).AddMonths(3) -canInvite $true -applications @(@{ siteId = 's1'; applicationId = 'a1' })
 Deny-RASelfServiceRequest -id r789
 ```
 
 ### Invitations
 
 ```powershell
-New-RAVendorInvitation -companyName Acme -emailAddress vendor@acme.com -firstName Jane -lastName Doe -phoneNumber '+15551234567' -initialStatus Activated -accessStartDate (Get-Date) -accessEndDate (Get-Date).AddMonths(3) -canInvite -applications @(@{ siteId = 's1'; applicationId = 'a1' })
+New-RAVendorInvitation -companyName Acme -emailAddress vendor@acme.com -firstName Jane -lastName Doe -phoneNumber '+15551234567' -initialStatus Activated -accessStartDate (Get-Date) -accessEndDate (Get-Date).AddMonths(3) -canInvite $true -applications @(@{ siteId = 's1'; applicationId = 'a1' })
 New-RAUserInvitation -usersToInvite @(@{ name = 'John Smith'; emailAddress = 'john@acme.com' }) -invitationExpirationTime (Get-Date).AddDays(7)
 Get-RAVendorInvitation
 Remove-RAVendorInvitation -invitationId i123

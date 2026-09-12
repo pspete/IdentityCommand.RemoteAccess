@@ -24,7 +24,7 @@ Describe 'Approve-RASelfServiceRequest' {
             New-Variable -Name ISPSSSession -Value $ISPSSSession -Scope Script -Force
         }
 
-        $Script:response = Approve-RASelfServiceRequest -id 'r1' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -Confirm:$false
+        $Script:response = Approve-RASelfServiceRequest -id 'r1' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite $true -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -Confirm:$false
 
     }
 
@@ -49,7 +49,7 @@ Describe 'Approve-RASelfServiceRequest' {
         }
 
         It 'does not send a request when WhatIf is specified' {
-            Approve-RASelfServiceRequest -id 'r1' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -WhatIf
+            Approve-RASelfServiceRequest -id 'r1' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite $true -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -WhatIf
             Should -Invoke -CommandName Invoke-IDRestMethod -ModuleName $Script:RAModuleName -Times 1 -Exactly -Scope It
         }
 

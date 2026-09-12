@@ -22,7 +22,7 @@ function Add-RATeamMember {
 
         $URI = "$($ISPSSSession.tenant_url)/v2-edge/teams/$([uri]::EscapeDataString($teamId))/members"
 
-        $Body = @{ userId = $userId }
+        $Body = $PSBoundParameters | Get-Parameter -ParametersToRemove teamId
 
         if ($PSCmdlet.ShouldProcess($teamId, "Add member '$userId'")) {
 

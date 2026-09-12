@@ -24,7 +24,7 @@ Describe 'New-RATeam' {
             New-Variable -Name ISPSSSession -Value $ISPSSSession -Scope Script -Force
         }
 
-        $Script:response = New-RATeam -name 'myteam' -accessPeriodStartDate (Get-Date '2026-01-01') -accessPeriodEndDate (Get-Date '2026-06-01') -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps -canDelegatePermissionsToExternalVendorManagers -canCreateGroups -canInviteToAllGroups -canInviteToAllApps -Confirm:$false
+        $Script:response = New-RATeam -name 'myteam' -accessPeriodStartDate (Get-Date '2026-01-01') -accessPeriodEndDate (Get-Date '2026-06-01') -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps $true -canDelegatePermissionsToExternalVendorManagers $true -canCreateGroups $true -canInviteToAllGroups $true -canInviteToAllApps $true -Confirm:$false
 
     }
 
@@ -49,7 +49,7 @@ Describe 'New-RATeam' {
         }
 
         It 'does not send a request when WhatIf is specified' {
-            New-RATeam -name 'myteam' -accessPeriodStartDate (Get-Date '2026-01-01') -accessPeriodEndDate (Get-Date '2026-06-01') -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps -canDelegatePermissionsToExternalVendorManagers -canCreateGroups -canInviteToAllGroups -canInviteToAllApps -WhatIf
+            New-RATeam -name 'myteam' -accessPeriodStartDate (Get-Date '2026-01-01') -accessPeriodEndDate (Get-Date '2026-06-01') -accountActivation AUTOMATIC -userProvisioning None -canInviteToWebApps $true -canDelegatePermissionsToExternalVendorManagers $true -canCreateGroups $true -canInviteToAllGroups $true -canInviteToAllApps $true -WhatIf
             Should -Invoke -CommandName Invoke-IDRestMethod -ModuleName $Script:RAModuleName -Times 1 -Exactly -Scope It
         }
 

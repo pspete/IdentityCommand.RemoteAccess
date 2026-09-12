@@ -13,7 +13,7 @@ Updates internal vendor manager permissions
 ## SYNTAX
 
 ```
-Set-RAVendorManagerPermission [-canDelegatePermissionsToExternalVendorManagers] [-canInviteToWebApps] [-canCreateGroups] [-canInviteToAllApps] [-canInviteToAllGroups] [-accessPeriodStartDate] <DateTime> [-userId] <String> [-accessPeriodEndDate] <DateTime> [-userProvisioning] <String> [-accountActivation] <String> [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-ErrorAction <ActionPreference>] [-userGroups <String[]>] [-idaptiveRoles <String[]>] [-allowedApps <Object[]>] [-maxInvitedVendors <Int32>] [-Verbose] [-Debug] [-provisioningUsername <String>] [-allowedEmailDomains <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-RAVendorManagerPermission [-canDelegatePermissionsToExternalVendorManagers] <Boolean> [-canInviteToWebApps] <Boolean> [-canCreateGroups] <Boolean> [-canInviteToAllApps] <Boolean> [-canInviteToAllGroups] <Boolean> [-accessPeriodStartDate] <DateTime> [-userId] <String> [-accessPeriodEndDate] <DateTime> [-userProvisioning] <String> [-accountActivation] <String> [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-ErrorAction <ActionPreference>] [-userGroups <String[]>] [-idaptiveRoles <String[]>] [-allowedApps <Object[]>] [-maxInvitedVendors <Int32>] [-Verbose] [-Debug] [-provisioningUsername <String>] [-allowedEmailDomains <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,12 +109,12 @@ Accept wildcard characters: False
 Indicates whether the vendor manager can invite vendors to web applications.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -124,12 +124,12 @@ Accept wildcard characters: False
 Indicates whether the vendor manager can delegate permissions to other external vendor managers.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -139,12 +139,12 @@ Accept wildcard characters: False
 Indicates whether the vendor manager can create groups.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -154,12 +154,12 @@ Accept wildcard characters: False
 Indicates whether the vendor manager can invite vendors to all groups.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -169,12 +169,12 @@ Accept wildcard characters: False
 Indicates whether the vendor manager can invite vendors to all applications.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -189,7 +189,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -204,7 +204,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 6
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -219,7 +219,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 7
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -234,7 +234,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 8
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -249,7 +249,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 9
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -264,7 +264,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 10
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

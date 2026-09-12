@@ -24,7 +24,7 @@ function Approve-RASelfServiceRequest {
 
         #Indicates whether the vendor can invite other vendors.
         [parameter(Mandatory = $true)]
-        [switch]$canInvite,
+        [bool]$canInvite,
 
         #The applications that the vendor can access through Remote Access, as objects with siteId/applicationId properties.
         [parameter(Mandatory = $true)]
@@ -57,7 +57,7 @@ function Approve-RASelfServiceRequest {
 
         #Indicates whether the vendor authenticates with an SMS code or phone call plus an emailed token, instead of scanning a QR code.
         [parameter(Mandatory = $false)]
-        [switch]$phoneAndEmailAuth,
+        [bool]$phoneAndEmailAuth,
 
         #Indicates whether additional vendors invited by the vendor are activated automatically or manually.
         [parameter(Mandatory = $false)]
@@ -72,22 +72,12 @@ function Approve-RASelfServiceRequest {
 
         $URI = "$($ISPSSSession.tenant_url)/v2-edge/selfServiceRequests/$([uri]::EscapeDataString($id))"
 
-        $Body = [ordered]@{
-            initialStatus   = $initialStatus
-            accessStartDate = $accessStartDate | ConvertTo-RAEpochMillisecond
-            accessEndDate   = $accessEndDate | ConvertTo-RAEpochMillisecond
-            canInvite       = [bool]$canInvite
-            applications    = @($applications)
-        }
+        $Body = $PSBoundParameters | Get-Parameter -ParametersToRemove id
 
-        if ($PSBoundParameters.ContainsKey('comments')) { $Body.comments = $comments }
-        if ($PSBoundParameters.ContainsKey('provisioningType')) { $Body.provisioningType = $provisioningType }
-        if ($PSBoundParameters.ContainsKey('provisioningUsername')) { $Body.provisioningUsername = $provisioningUsername }
-        if ($PSBoundParameters.ContainsKey('provisioningGroups')) { $Body.provisioningGroups = @($provisioningGroups) }
-        if ($PSBoundParameters.ContainsKey('customText')) { $Body.customText = $customText }
-        if ($PSBoundParameters.ContainsKey('maxNumOfInvitedVendors')) { $Body.maxNumOfInvitedVendors = $maxNumOfInvitedVendors }
-        if ($PSBoundParameters.ContainsKey('phoneAndEmailAuth')) { $Body.phoneAndEmailAuth = [bool]$phoneAndEmailAuth }
-        if ($PSBoundParameters.ContainsKey('invitedVendorsInitialStatus')) { $Body.invitedVendorsInitialStatus = $invitedVendorsInitialStatus }
+        switch ($PSBoundParameters.Keys) {
+            'accessStartDate' { $Body.accessStartDate = $accessStartDate | ConvertTo-RAEpochMillisecond }
+            'accessEndDate' { $Body.accessEndDate = $accessEndDate | ConvertTo-RAEpochMillisecond }
+        }
 
         if ($PSCmdlet.ShouldProcess($id, 'Approve self-service request')) {
 

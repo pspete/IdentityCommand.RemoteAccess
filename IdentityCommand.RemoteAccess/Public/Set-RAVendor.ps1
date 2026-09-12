@@ -24,7 +24,7 @@ function Set-RAVendor {
 
         #Indicates whether the vendor can invite other vendors.
         [parameter(Mandatory = $false)]
-        [switch]$canInvite,
+        [bool]$canInvite,
 
         #Indicates whether additional vendors invited by the vendor are activated automatically or manually.
         [parameter(Mandatory = $false)]
@@ -62,7 +62,7 @@ function Set-RAVendor {
 
         #Indicates whether the vendor can access web applications.
         [parameter(Mandatory = $false)]
-        [switch]$pvwaApplications
+        [bool]$pvwaApplications
 
     )
 
@@ -77,20 +77,12 @@ function Set-RAVendor {
             'ByPhone' { "$URI/phone/$([uri]::EscapeDataString($phoneNumber))" }
         }
 
-        $Body = [ordered]@{ }
+        $Body = $PSBoundParameters | Get-Parameter -ParametersToRemove vendorId, phoneNumber
 
-        if ($PSBoundParameters.ContainsKey('accessStartDate')) { $Body.accessStartDate = $accessStartDate | ConvertTo-RAEpochMillisecond }
-        if ($PSBoundParameters.ContainsKey('accessEndDate')) { $Body.accessEndDate = $accessEndDate | ConvertTo-RAEpochMillisecond }
-        if ($PSBoundParameters.ContainsKey('canInvite')) { $Body.canInvite = [bool]$canInvite }
-        if ($PSBoundParameters.ContainsKey('invitedVendorsInitialStatus')) { $Body.invitedVendorsInitialStatus = $invitedVendorsInitialStatus }
-        if ($PSBoundParameters.ContainsKey('maxNumInvitedVendors')) { $Body.maxNumInvitedVendors = $maxNumInvitedVendors }
-        if ($PSBoundParameters.ContainsKey('provisioningType')) { $Body.provisioningType = $provisioningType }
-        if ($PSBoundParameters.ContainsKey('username')) { $Body.username = $username }
-        if ($PSBoundParameters.ContainsKey('groups')) { $Body.groups = @($groups) }
-        if ($PSBoundParameters.ContainsKey('idaptiveRoles')) { $Body.idaptiveRoles = @($idaptiveRoles) }
-        if ($PSBoundParameters.ContainsKey('comments')) { $Body.comments = $comments }
-        if ($PSBoundParameters.ContainsKey('applications')) { $Body.applications = @($applications) }
-        if ($PSBoundParameters.ContainsKey('pvwaApplications')) { $Body.pvwaApplications = [bool]$pvwaApplications }
+        switch ($PSBoundParameters.Keys) {
+            'accessStartDate' { $Body.accessStartDate = $accessStartDate | ConvertTo-RAEpochMillisecond }
+            'accessEndDate' { $Body.accessEndDate = $accessEndDate | ConvertTo-RAEpochMillisecond }
+        }
 
         if ($PSCmdlet.ShouldProcess($(if ($vendorId) { $vendorId } else { $phoneNumber }), 'Update vendor')) {
 

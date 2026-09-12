@@ -13,7 +13,7 @@ Approves a self-service invitation request
 ## SYNTAX
 
 ```
-Approve-RASelfServiceRequest [-accessEndDate] <DateTime> [-canInvite] [-applications] <Object[]> [-id] <String> [-initialStatus] <String> [-accessStartDate] <DateTime> [-InformationAction <ActionPreference>] [-ErrorVariable <String>] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-WarningVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-Debug] [-provisioningUsername <String>] [-provisioningGroups <String[]>] [-comments <String>] [-provisioningType <String>] [-customText <String>] [-invitedVendorsInitialStatus <String>] [-Verbose] [-maxNumOfInvitedVendors <Int32>] [-phoneAndEmailAuth] [-WhatIf] [-Confirm] [<CommonParameters>]
+Approve-RASelfServiceRequest [-accessEndDate] <DateTime> [-canInvite] <Boolean> [-applications] <Object[]> [-id] <String> [-initialStatus] <String> [-accessStartDate] <DateTime> [-InformationAction <ActionPreference>] [-ErrorVariable <String>] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-WarningVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-Debug] [-provisioningUsername <String>] [-provisioningGroups <String[]>] [-comments <String>] [-provisioningType <String>] [-customText <String>] [-invitedVendorsInitialStatus <String>] [-Verbose] [-maxNumOfInvitedVendors <Int32>] [-phoneAndEmailAuth <Boolean>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,12 +94,12 @@ Accept wildcard characters: False
 Indicates whether the vendor can invite other vendors.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: Named
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -114,7 +114,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -129,7 +129,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -144,7 +144,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 6
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -159,7 +159,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 7
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -174,7 +174,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 8
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -189,7 +189,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 9
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -204,7 +204,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 10
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -214,12 +214,12 @@ Accept wildcard characters: False
 Indicates whether the vendor authenticates with an SMS code or phone call plus an emailed token, instead of scanning a QR code.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: Named
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -234,7 +234,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 11
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

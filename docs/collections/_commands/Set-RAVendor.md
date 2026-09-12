@@ -14,12 +14,12 @@ Updates a Remote Access vendor
 
 ### ById
 ```
-Set-RAVendor [-vendorId] <String> [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Verbose] [-Debug] [-ErrorVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-OutVariable <String>] [-WarningVariable <String>] [-InformationVariable <String>] [-pvwaApplications] [-invitedVendorsInitialStatus <String>] [-maxNumInvitedVendors <Int32>] [-canInvite] [-accessStartDate <DateTime>] [-accessEndDate <DateTime>] [-provisioningType <String>] [-comments <String>] [-applications <Object[]>] [-idaptiveRoles <String[]>] [-username <String>] [-groups <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-RAVendor [-vendorId] <String> [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Verbose] [-Debug] [-ErrorVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-OutVariable <String>] [-WarningVariable <String>] [-InformationVariable <String>] [-pvwaApplications <Boolean>] [-invitedVendorsInitialStatus <String>] [-maxNumInvitedVendors <Int32>] [-canInvite <Boolean>] [-accessStartDate <DateTime>] [-accessEndDate <DateTime>] [-provisioningType <String>] [-comments <String>] [-applications <Object[]>] [-idaptiveRoles <String[]>] [-username <String>] [-groups <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByPhone
 ```
-Set-RAVendor [-phoneNumber] <String> [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Verbose] [-Debug] [-ErrorVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-OutVariable <String>] [-WarningVariable <String>] [-InformationVariable <String>] [-pvwaApplications] [-invitedVendorsInitialStatus <String>] [-maxNumInvitedVendors <Int32>] [-canInvite] [-accessStartDate <DateTime>] [-accessEndDate <DateTime>] [-provisioningType <String>] [-comments <String>] [-applications <Object[]>] [-idaptiveRoles <String[]>] [-username <String>] [-groups <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-RAVendor [-phoneNumber] <String> [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Verbose] [-Debug] [-ErrorVariable <String>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-OutVariable <String>] [-WarningVariable <String>] [-InformationVariable <String>] [-pvwaApplications <Boolean>] [-invitedVendorsInitialStatus <String>] [-maxNumInvitedVendors <Int32>] [-canInvite <Boolean>] [-accessStartDate <DateTime>] [-accessEndDate <DateTime>] [-provisioningType <String>] [-comments <String>] [-applications <Object[]>] [-idaptiveRoles <String[]>] [-username <String>] [-groups <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 Indicates whether the vendor can invite other vendors.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 Indicates whether the vendor can access web applications.
 
 ```yaml
-Type: SwitchParameter
+Type: Boolean
 Parameter Sets: (All)
 Aliases: 
 

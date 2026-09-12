@@ -21,8 +21,7 @@ function New-RAGroup {
 
         $URI = "$($ISPSSSession.tenant_url)/v2-edge/groups"
 
-        $Body = [ordered]@{ name = $name }
-        if ($PSBoundParameters.ContainsKey('description')) { $Body.description = $description }
+        $Body = $PSBoundParameters | Get-Parameter
 
         if ($PSCmdlet.ShouldProcess($name, 'Create group')) {
 

@@ -25,12 +25,8 @@ function New-RAUserInvitation {
 
         $URI = "$($ISPSSSession.tenant_url)/v2-edge/invitations/user-invitations"
 
-        $Body = [ordered]@{
-            usersToInvite            = @($usersToInvite)
-            invitationExpirationTime = $invitationExpirationTime | ConvertTo-RAEpochMillisecond
-        }
-
-        if ($PSBoundParameters.ContainsKey('initialStatus')) { $Body.initialStatus = $initialStatus }
+        $Body = $PSBoundParameters | Get-Parameter
+        $Body.invitationExpirationTime = $invitationExpirationTime | ConvertTo-RAEpochMillisecond
 
         if ($PSCmdlet.ShouldProcess(($usersToInvite | ForEach-Object { $_.emailAddress }) -join ', ', 'Create user invitation')) {
 

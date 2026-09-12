@@ -24,7 +24,7 @@ Describe 'New-RAVendorInvitation' {
             New-Variable -Name ISPSSSession -Value $ISPSSSession -Scope Script -Force
         }
 
-        $Script:response = New-RAVendorInvitation -companyName 'Acme' -emailAddress 'v@acme.com' -firstName 'V' -lastName 'Endor' -phoneNumber '+15551234567' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -Confirm:$false
+        $Script:response = New-RAVendorInvitation -companyName 'Acme' -emailAddress 'v@acme.com' -firstName 'V' -lastName 'Endor' -phoneNumber '+15551234567' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite $true -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -Confirm:$false
 
     }
 
@@ -49,7 +49,7 @@ Describe 'New-RAVendorInvitation' {
         }
 
         It 'does not send a request when WhatIf is specified' {
-            New-RAVendorInvitation -companyName 'Acme' -emailAddress 'v@acme.com' -firstName 'V' -lastName 'Endor' -phoneNumber '+15551234567' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -WhatIf
+            New-RAVendorInvitation -companyName 'Acme' -emailAddress 'v@acme.com' -firstName 'V' -lastName 'Endor' -phoneNumber '+15551234567' -initialStatus Activated -accessStartDate (Get-Date '2026-01-01') -accessEndDate (Get-Date '2026-06-01') -canInvite $true -applications @(@{ siteId = 's1'; applicationId = 'a1' }) -WhatIf
             Should -Invoke -CommandName Invoke-IDRestMethod -ModuleName $Script:RAModuleName -Times 1 -Exactly -Scope It
         }
 
