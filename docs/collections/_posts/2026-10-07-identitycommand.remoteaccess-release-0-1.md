@@ -1,12 +1,40 @@
-# Change Log
+---
+title: "IdentityCommand.RemoteAccess Release 0.1"
+date: 2026-10-07 00:00:00
+version: 0.1.0
+tags:
+  - Release Notes
+  - Connect-RATenant
+  - Remove-RAVendor
+  - Set-RAVendorStatus
+  - Remove-RAUser
+  - Set-RAUserStatus
+  - Set-RAUserRole
+  - Get-RAUserTeam
+  - Add-RAUserToTeam
+  - Remove-RAUserFromTeam
+  - Set-RAVendorManagerPermission
+  - Grant-RAVendorManagerPermission
+  - Remove-RAGroup
+  - Remove-RATeam
+  - Get-RATeamMember
+  - Add-RATeamMember
+  - Remove-RATeamMember
+  - Get-RASelfServiceRequest
+  - Approve-RASelfServiceRequest
+  - Deny-RASelfServiceRequest
+  - New-RAVendorInvitation
+  - New-RAUserInvitation
+  - Get-RAVendorInvitation
+  - Remove-RAVendorInvitation
+  - Get-RASite
+  - Get-RAApplication
+  - Get-RAConnector
+  - Get-RAActivity
+  - Get-RAModuleData
+---
 
-All notable changes to this project will be documented in this file.
-
-## Unreleased
-
-- N/A
-
-## [0.1.0] - 2026-10-07
+## [0.1.0]
 
 ### Added
 
@@ -27,4 +55,3 @@ All notable changes to this project will be documented in this file.
   `Remove-RAVendorInvitation`.
 - `Get-RASite`, `Get-RAApplication`, `Get-RAConnector`, `Get-RAActivity`.
 - `Get-RAModuleData`: get the module version and session configuration data.
-
