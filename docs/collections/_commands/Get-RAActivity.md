@@ -13,7 +13,7 @@ Gets Remote Access activities
 ## SYNTAX
 
 ```
-Get-RAActivity [-activityTypes] <String[]> [-WarningVariable <String>] [-ErrorVariable <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-WarningAction <ActionPreference>] [-offset <Int32>] [-toTime <DateTime>] [-fromTime <DateTime>] [-limit <Int32>] [-ErrorAction <ActionPreference>] [-Debug] [-Verbose] [<CommonParameters>]
+Get-RAActivity [-activityTypes] <String[]> [-WarningVariable <String>] [-ErrorVariable <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-WarningAction <ActionPreference>] [-toTime <DateTime>] [-fromTime <DateTime>] [-limit <Int32>] [-ErrorAction <ActionPreference>] [-Debug] [-Verbose] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +75,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -limit
 The maximum number of entries to return.
 
@@ -99,7 +84,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 4
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

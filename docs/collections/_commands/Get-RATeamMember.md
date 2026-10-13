@@ -13,7 +13,7 @@ Gets Vendor Manager team members
 ## SYNTAX
 
 ```
-Get-RATeamMember [-teamId] <String> [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-limit <Int32>] [-sortBy <String>] [-searchString <String>] [-offset <Int32>] [-Debug] [-ErrorAction <ActionPreference>] [-sortDirection <String>] [-Verbose] [<CommonParameters>]
+Get-RATeamMember [-teamId] <String> [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-limit <Int32>] [-sortBy <String>] [-searchString <String>] [-Debug] [-ErrorAction <ActionPreference>] [-sortDirection <String>] [-Verbose] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,21 +60,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -limit
 The maximum number of entries to return.
 
@@ -84,7 +69,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -99,7 +84,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 4
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -114,7 +99,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

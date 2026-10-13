@@ -14,7 +14,7 @@ Gets Vendor Manager teams
 
 ### List (Default)
 ```
-Get-RATeam [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-limit <Int32>] [-sortBy <String>] [-searchString <String>] [-offset <Int32>] [-Debug] [-ErrorAction <ActionPreference>] [-sortDirection <String>] [-Verbose] [<CommonParameters>]
+Get-RATeam [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-limit <Int32>] [-sortBy <String>] [-searchString <String>] [-Debug] [-ErrorAction <ActionPreference>] [-sortDirection <String>] [-Verbose] [<CommonParameters>]
 ```
 
 ### ById
@@ -56,21 +56,6 @@ The string to use in the search.
 
 ```yaml
 Type: String
-Parameter Sets: List
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
 Parameter Sets: List
 Aliases: 
 

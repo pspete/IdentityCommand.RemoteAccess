@@ -26,10 +26,6 @@ function Get-RAVendor {
         [parameter(Mandatory = $false, ParameterSetName = 'List')]
         [String]$searchIn,
 
-        #The number of entries to skip.
-        [parameter(Mandatory = $false, ParameterSetName = 'List')]
-        [int]$offset,
-
         #The maximum number of entries to return.
         [parameter(Mandatory = $false, ParameterSetName = 'List')]
         [int]$limit

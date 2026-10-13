@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - CI caches the PowerShell modules it installs, so dependency installs skip the PowerShell Gallery on a cache hit.
 
+### Removed
+
+- `-offset` from `Get-RAActivity`, `Get-RAApplication`, `Get-RAGroup`, `Get-RASelfServiceRequest`, `Get-RASite`, `Get-RATeam`, `Get-RATeamMember`, `Get-RAUser`, `Get-RAVendor` and `Get-RAVendorInvitation`. Every page is retrieved automatically, and a starting offset returned duplicated and missing items.
+
 ## [0.1.0] - 2026-10-07
 
 ### Added
