@@ -13,7 +13,7 @@ Gets Remote Access sites
 ## SYNTAX
 
 ```
-Get-RASite [-InformationVariable <String>] [-WarningVariable <String>] [-ErrorVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-InformationAction <ActionPreference>] [-Verbose] [-limit <Int32>] [-offset <Int32>] [-WarningAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Debug] [<CommonParameters>]
+Get-RASite [-InformationVariable <String>] [-WarningVariable <String>] [-ErrorVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-InformationAction <ActionPreference>] [-Verbose] [-limit <Int32>] [-WarningAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Debug] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,21 +30,6 @@ Gets Remote Access sites
 
 ## PARAMETERS
 
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -limit
 The maximum number of entries to return.
 
@@ -54,7 +39,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -9,10 +9,6 @@ function Get-RAApplication {
         [ValidateNotNullOrEmpty()]
         [String]$siteId,
 
-        #The number of entries to skip.
-        [parameter(Mandatory = $false)]
-        [int]$offset,
-
         #The maximum number of entries to return.
         [parameter(Mandatory = $false)]
         [int]$limit

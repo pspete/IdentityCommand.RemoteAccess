@@ -14,7 +14,7 @@ Gets Remote Access users
 
 ### List (Default)
 ```
-Get-RAUser [-WarningVariable <String>] [-ErrorVariable <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-limit <Int32>] [-offset <Int32>] [-name <String>] [-Verbose] [-WarningAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Debug] [<CommonParameters>]
+Get-RAUser [-WarningVariable <String>] [-ErrorVariable <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-limit <Int32>] [-name <String>] [-Verbose] [-WarningAction <ActionPreference>] [-ErrorAction <ActionPreference>] [-Debug] [<CommonParameters>]
 ```
 
 ### ById
@@ -56,21 +56,6 @@ The name of the resource.
 
 ```yaml
 Type: String
-Parameter Sets: List
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
 Parameter Sets: List
 Aliases: 
 

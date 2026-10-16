@@ -14,7 +14,7 @@ Gets Remote Access groups
 
 ### List (Default)
 ```
-Get-RAGroup [-WarningVariable <String>] [-ErrorVariable <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-WarningAction <ActionPreference>] [-offset <Int32>] [-searchIn <String>] [-searchString <String>] [-limit <Int32>] [-ErrorAction <ActionPreference>] [-Debug] [-Verbose] [<CommonParameters>]
+Get-RAGroup [-WarningVariable <String>] [-ErrorVariable <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-PipelineVariable <String>] [-OutBuffer <Int32>] [-OutVariable <String>] [-WarningAction <ActionPreference>] [-searchIn <String>] [-searchString <String>] [-limit <Int32>] [-ErrorAction <ActionPreference>] [-Debug] [-Verbose] [<CommonParameters>]
 ```
 
 ### ById
@@ -71,21 +71,6 @@ The field in which to perform the search.
 
 ```yaml
 Type: String
-Parameter Sets: List
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
 Parameter Sets: List
 Aliases: 
 

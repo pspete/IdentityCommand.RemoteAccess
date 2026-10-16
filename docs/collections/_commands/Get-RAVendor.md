@@ -14,7 +14,7 @@ Gets Remote Access vendors
 
 ### List (Default)
 ```
-Get-RAVendor [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-searchIn <String>] [-offset <Int32>] [-invitedBy <String>] [-searchString <String>] [-Debug] [-ErrorAction <ActionPreference>] [-limit <Int32>] [-Verbose] [<CommonParameters>]
+Get-RAVendor [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-searchIn <String>] [-invitedBy <String>] [-searchString <String>] [-Debug] [-ErrorAction <ActionPreference>] [-limit <Int32>] [-Verbose] [<CommonParameters>]
 ```
 
 ### ById
@@ -106,21 +106,6 @@ The field in which to perform the search.
 
 ```yaml
 Type: String
-Parameter Sets: List
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
 Parameter Sets: List
 Aliases: 
 

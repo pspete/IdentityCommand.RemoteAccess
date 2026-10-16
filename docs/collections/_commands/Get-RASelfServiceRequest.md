@@ -13,7 +13,7 @@ Gets self-service invitation requests
 ## SYNTAX
 
 ```
-Get-RASelfServiceRequest [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-ErrorAction <ActionPreference>] [-fromTime <DateTime>] [-toTime <DateTime>] [-searchString <String>] [-searchIn <String>] [-Verbose] [-Debug] [-offset <Int32>] [-limit <Int32>] [<CommonParameters>]
+Get-RASelfServiceRequest [-ErrorVariable <String>] [-WarningVariable <String>] [-WarningAction <ActionPreference>] [-InformationAction <ActionPreference>] [-OutBuffer <Int32>] [-PipelineVariable <String>] [-InformationVariable <String>] [-OutVariable <String>] [-ErrorAction <ActionPreference>] [-fromTime <DateTime>] [-toTime <DateTime>] [-searchString <String>] [-searchIn <String>] [-Verbose] [-Debug] [-limit <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +90,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -offset
-The number of entries to skip.
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -limit
 The maximum number of entries to return.
 
@@ -114,7 +99,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: False
-Position: 5
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
