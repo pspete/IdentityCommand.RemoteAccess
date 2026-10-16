@@ -1,7 +1,7 @@
 ---
 title: "IdentityCommand.RemoteAccess Release 0.1"
-date: 2026-10-07 00:00:00
-version: 0.1.0
+date: 2026-10-16 00:00:00
+version: 0.1.1
 tags:
   - Release Notes
   - Connect-RATenant
@@ -32,7 +32,21 @@ tags:
   - Get-RAConnector
   - Get-RAActivity
   - Get-RAModuleData
+  - Get-RAGroup
+  - Get-RATeam
+  - Get-RAUser
+  - Get-RAVendor
 ---
+
+## [0.1.1]
+
+### Changed
+
+- CI caches the PowerShell modules it installs, so dependency installs skip the PowerShell Gallery on a cache hit.
+
+### Removed
+
+- `-offset` from `Get-RAActivity`, `Get-RAApplication`, `Get-RAGroup`, `Get-RASelfServiceRequest`, `Get-RASite`, `Get-RATeam`, `Get-RATeamMember`, `Get-RAUser`, `Get-RAVendor` and `Get-RAVendorInvitation`. Every page is retrieved automatically, and a starting offset returned duplicated and missing items.
 
 ## [0.1.0]
 
