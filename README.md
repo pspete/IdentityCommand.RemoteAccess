@@ -1,3 +1,7 @@
+![Logo][Logo]
+
+[Logo]: /docs/media/images/IdentityCommand.RemoteAccess.png
+
 # IdentityCommand.RemoteAccess
 
 **IdentityCommand.RemoteAccess** is a PowerShell module that provides a set of easy-to-use commands, allowing you to interact with the **CyberArk Remote Access API** from within the PowerShell environment.
