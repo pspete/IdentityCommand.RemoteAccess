@@ -19,7 +19,7 @@
 [codefactor]: https://www.codefactor.io/repository/github/pspete/IdentityCommand.RemoteAccess/badge
 [codecov]: https://codecov.io/gh/pspete/IdentityCommand.RemoteAccess/branch/main/graph/badge.svg
 [codecov-link]: https://codecov.io/gh/pspete/IdentityCommand.RemoteAccess
-[license]: https://img.shields.io/github/license/pspete/IdentityCommand.RemoteAccess.svg
+[license]: https://img.shields.io/badge/license-MIT-green.svg
 [license-link]: https://github.com/pspete/IdentityCommand.RemoteAccess/blob/main/LICENSE
 
 ## Using the Module
